@@ -7,12 +7,13 @@ on:
    pull_request:
    branches: [main]
    schedule:
-    -corn: '15 6 * *'
+    -corn: '15 6 * * 0'
     workflow_dispatch:
     jobs:
-     buils:
-      -run: |
-      echo "fjhhfjgffg: ${{ github.event_name }}"
-      echo "fjhhfjgffg: ${{ github.event_name }}"
+      buils:
+       -run-on: |
+          echo "The job was tiggered by event: ${{ github.event_name }}"
+          echo "The name of your branch is ${{ github.event_name }}"
+       
       - uses: action/checkout@v3.3.0
       -run: tree -a
